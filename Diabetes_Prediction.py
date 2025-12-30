@@ -3,7 +3,7 @@ import numpy as np
 import joblib
 import streamlit as st
 
-model = joblib.load(open("logistic_regression_model for Diabetes", "rb"))
+model = joblib.load(open("logistic_regression_model for Diabetes.joblib", "rb"))
 
 st.title("Diabetes Prediction App")
 
@@ -21,3 +21,4 @@ input_data = np.array([[preg, glu, bp, skin, insulin, bmi, dpf, age]])
 if st.button("Predict"):
     result = model.predict(input_data)
     st.success("Diabetic" if result[0] == 1 else "Not Diabetic")
+
